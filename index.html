@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta name="encoding" value="utf-8" />
+<title>I H8 FB</title>
+
+<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+
+</head>
+<body>
+
+<div class="container">
+
+	<div class="row-fluid">
+		<div class="span4 offset4">
+			<h1>1 - Get your access token</h1>
+			<p class="alert alert-warning"><i class="icon-eye-open icon-large"></i> You'll need to access your statuses from FB.</p>
+			<form action="https://developers.facebook.com/tools/explorer" method="get" target="_blank">
+			<button class="btn-submit btn-large btn-primary"><i class="icon-facebook"></i> Get Access Token</button>
+			</form>
+
+			<hr />
+
+			<h1>2 - Get your statuses</h1>
+			<p class="alert alert-info"><i class="icon-info icon-large"></i> You can select everything with Ctrl + A.</p>
+			<form action="https://graph.facebook.com/me" method="get" target="_blank">
+				<input type="text" name="access_token" class="input-block-level" placeHolder="Facebook Access Token" />
+				<input type="hidden" name="fields" value ="statuses.limit(50000)" />
+				<button class="btn-submit btn-large btn-primary"><i class="icon-download"></i> Get All Statuses</button>
+			</form>
+
+			<hr />
+
+			<h1>3 - Send them somewhere else</h1>
+
+			<form action="post.php" method="post">
+				<textarea name="statuses_json" class="input-block-level" rows="5"></textarea><br />
+				<button class="btn-submit btn-large btn-primary">Wordpress Blog</button>
+				<button class="btn-submit btn-large btn-primary"><i class="icon-tumblr"></i> Tumbrl</button>
+			</form>
+		</div>
+	</div>
+
+
+<div>
+
+</body>
+</html>
